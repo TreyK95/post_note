@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
   def index
-    puts "who knows whats going on"
+    #define an instance variable
+    @notes = Note.all
   end
 
   def show
