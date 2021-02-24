@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require "faker"
+
+Note.destroy_all
+
+10.times do
+  Note.create(
+    title: Faker::Games::Pokemon.name,
+    description: Faker::Team.sport,
+    body: Faker::Subscription.status,
+  )
+end
+
+puts "Seeded you have #{Note.all.size} notes"
